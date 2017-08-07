@@ -17,4 +17,7 @@ export class AppComponent {
     //console.log( detail );
     //console.log( list );
   }
+  setArtista( event ){
+    console.log(event);
+  };
 }

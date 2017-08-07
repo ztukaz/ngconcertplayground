@@ -1,6 +1,6 @@
 <div>
     <ul *ngFor=" let artista of artisti">
-        <li (click)="clickHandler( artista )">
+        <li [name]=" artista.name " (click)="onClick( $event )">
             {{ artista.name }}
             <img width="50" src="{{ artista.image_url }}" alt="{{ artista.name }}">
         </li>

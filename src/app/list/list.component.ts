@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-list',
@@ -10,6 +9,7 @@ export class List implements OnInit {
 
   public list: String[]; 
   public artisti: Object[];
+  @Output() aggiornaLista: EventEmitter<any> = new EventEmitter();
 
   constructor(  private http: HttpClient ) {
     this.list = [
@@ -34,12 +34,11 @@ export class List implements OnInit {
           this.artisti.push( responsejson );
         }
       }, ( error ) => {
-        console.log( "merda" );
+        console.log( "non funzia" );
       });
     });
   }
-  clickHandler( event ){
-    let pippo = new Detail();
-    pippo.setNome(event['nome']);
+  onClick( event ){
+    this.aggiornaLista.emit( event );
   }
 }
