@@ -6,12 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { Detail } from './detail/detail.component';
 import { List } from './list/list.component';
+import { Search } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     List,
-    Detail
+    Detail,
+    Search
   ],
   imports: [
     BrowserModule,
