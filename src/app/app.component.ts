@@ -22,8 +22,4 @@ export class AppComponent {
     this.artista = event;
     //console.log(event);
   };
-
-  searchArtistaParent(event){
-    this.artista = event;
-  }
 }
