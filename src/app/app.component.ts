@@ -10,7 +10,8 @@ import { List } from './list/list.component';
   providers:[ Detail, List ]
 })
 export class AppComponent {
-  title = 'Lista e click via api';
+  title:String = 'Lista e click via api';
+  artista:String = "";
   constructor(){
     //constructor( private detail: Detail, private list: List){
     //codice di m commentato
@@ -18,6 +19,7 @@ export class AppComponent {
     //console.log( list );
   }
   setArtista( event ){
-    console.log(event);
+    this.artista = event;
+    //console.log(event);
   };
 }

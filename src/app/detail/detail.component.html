@@ -2,7 +2,9 @@
     <h3>
         {{ title }}
     </h3>
-    <p>
-        {{ content }}
-    </p>
+    <ul *ngFor=" let item of result">
+        <li>
+            {{ item.venue.name }}, {{ item.venue.city }}<br>
+        </li>
+    </ul>
 </div>

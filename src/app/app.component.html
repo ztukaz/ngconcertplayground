@@ -3,9 +3,9 @@
 </h1>
 <div class="row">
     <div class="col-md-4">
-        <app-list (aggiornaLista)="setArtista( artista )"></app-list>
+        <app-list (aggiornaLista)="setArtista( $event )"></app-list>
     </div>
     <div class="col-md-8">
-        <app-detail></app-detail>
+        <app-detail [nomeartista] = "artista"></app-detail>
     </div>
 </div>

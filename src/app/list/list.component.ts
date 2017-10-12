@@ -9,7 +9,7 @@ export class List implements OnInit {
 
   public list: String[]; 
   public artisti: Object[];
-  @Output() aggiornaLista: EventEmitter<any> = new EventEmitter();
+  @Output() aggiornaLista: EventEmitter<String> = new EventEmitter<String>();
 
   constructor(  private http: HttpClient ) {
     this.list = [
