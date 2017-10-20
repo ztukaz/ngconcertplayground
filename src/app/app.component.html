@@ -8,9 +8,9 @@
 </div>
 <div class="row">
     <div class="col-md-4">
-        <app-list (aggiornaLista)="setArtista( $event )"></app-list>
+        <app-list [artistToPush]="artistaConfermato" (aggiornaLista)="setArtista( $event )"></app-list>
     </div>
     <div class="col-md-8">
-        <app-detail [nomeartista] = "artista"></app-detail>
+        <app-detail (appendArtist)="setArtistaConfermato($event)" [nomeartista] = "artista"></app-detail>
     </div>
 </div>

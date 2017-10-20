@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChange } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -10,6 +10,7 @@ export class Detail implements OnChanges{
 
   public title: String;
   public result: Object;
+  @Output() appendArtist: EventEmitter<String> = new EventEmitter<String>();
   @Input() nomeartista: String;
 
   constructor( private http: HttpClient ) {
@@ -18,7 +19,7 @@ export class Detail implements OnChanges{
   }
 
   ngOnChanges(e){
-    console.log(e);
+    //console.log(e);
     if(!e.nomeartista.firstChange){
       let artistName = e.nomeartista.currentValue;
       this.title = artistName;
@@ -32,13 +33,15 @@ export class Detail implements OnChanges{
     
     this.http.get( call ).subscribe( ( responsejson ) => {
       if ( responsejson ){
-        console.log(responsejson);
+        //console.log(responsejson);
         this.result = responsejson;
+        this.appendArtist.emit( artista );
       }
     }, ( error ) => {
       console.log( "non funzia" );
     });
-    
   }
+
+  
 
 }

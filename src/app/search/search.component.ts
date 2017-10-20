@@ -13,8 +13,12 @@ export class Search {
   constructor() {
     this.valore = "";
   }
+  updateArtista( event ){
+    this.valore = event.target.value;
+
+    console.log(this.valore);
+  }
   searchArtista( event ){
-    this.valore += event.key;
     this.callArtista.emit( this.valore );
   }
 }

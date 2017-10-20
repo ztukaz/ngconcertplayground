@@ -1,3 +1,5 @@
 <div>
-    <input (keyup)="searchArtista($event)" type="text" name="search" value="" placeholder="Search an artist">
+    <input (input)="updateArtista($event)" type="text" name="search" [value]="this.valore" placeholder="Search an artist">
+    <!--<input [(ngModel)] = "this.valore" type="text" name="search" placeholder="Search an artist">-->
+    <button (click)="searchArtista($event)" class="btn btn-primary">Cerca</button>
 </div>

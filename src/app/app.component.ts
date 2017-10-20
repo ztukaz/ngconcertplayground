@@ -11,7 +11,8 @@ import { List } from './list/list.component';
 })
 export class AppComponent {
   title:String = 'Lista e click via api';
-  artista:String = "";
+  artista:String;
+  artistaConfermato:String;
   constructor(){
     //constructor( private detail: Detail, private list: List){
     //codice di m commentato
@@ -20,6 +21,11 @@ export class AppComponent {
   }
   setArtista( event ){
     this.artista = event;
+    //console.log(event);
+  };
+
+  setArtistaConfermato( event ){
+    this.artistaConfermato = event;
     //console.log(event);
   };
 }
